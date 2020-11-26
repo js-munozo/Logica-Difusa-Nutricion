@@ -2,7 +2,7 @@
 
 # Archivo de MATLAB (librería FuzzyLogicDesigner) e interfaz gráfica hecha en JAVA
 
-El sistema toma como variables de entrada los niveles de los nutrientes principales de los usuarios:
+El sistema toma como variables de entrada los niveles en los nutrientes principales para la dieta de los deportistas:
 
 -	Cantidad de Carbohidratos (pocos, normal, muchos)
 -	Proteínas (pocas, normal, muchas)
