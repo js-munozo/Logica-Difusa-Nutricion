@@ -1,0 +1,97 @@
+[System]
+Name='Nutricion_Cuidado'
+Type='mamdani'
+Version=2.0
+NumInputs=6
+NumOutputs=1
+NumRules=26
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='carbohidratos'
+Range=[0 400]
+NumMFs=3
+MF1='pocos':'zmf',[0 130]
+MF2='normal':'trimf',[100 200 300]
+MF3='muchos':'smf',[240 400]
+
+[Input2]
+Name='proteinas'
+Range=[0 300]
+NumMFs=3
+MF1='pocas':'zmf',[29.7 70]
+MF2='normal':'trapmf',[50 95 130 175]
+MF3='muchas':'smf',[145 200]
+
+[Input3]
+Name='grasas'
+Range=[0 5]
+NumMFs=3
+MF1='pocas':'zmf',[1 1.6]
+MF2='normal':'trimf',[1.5 2 2.6]
+MF3='muchas':'smf',[2.19 3.2]
+
+[Input4]
+Name='vitaminas'
+Range=[0 13]
+NumMFs=3
+MF1='pocas':'zmf',[3 5]
+MF2='normal':'trimf',[4 7 11]
+MF3='muchas':'smf',[9 11]
+
+[Input5]
+Name='minerales'
+Range=[0 7]
+NumMFs=2
+MF1='pocos':'zmf',[2 4]
+MF2='suficientes':'smf',[3 5]
+
+[Input6]
+Name='agua'
+Range=[0 10]
+NumMFs=3
+MF1='mucha':'smf',[4 9]
+MF2='regular':'trapmf',[2 2.9 3.9 4.8]
+MF3='poca':'zmf',[0.5 2.5]
+
+[Output1]
+Name='nutricion'
+Range=[0 100]
+NumMFs=5
+MF1='muy_mal':'zmf',[5 20]
+MF2='mal':'trimf',[14 25 40]
+MF3='regular':'trimf',[35 50.1 70]
+MF4='buena':'trimf',[65 77 90]
+MF5='excelente':'smf',[85.5 99.5]
+
+[Rules]
+1 1 1 1 1 3, 1 (1) : 1
+2 2 2 2 2 2, 4 (1) : 1
+3 3 3 3 2 1, 2 (1) : 1
+2 1 3 1 1 0, 1 (1) : 1
+2 3 2 3 2 2, 5 (1) : 1
+2 3 3 3 2 2, 4 (1) : 1
+3 2 2 3 2 2, 4 (1) : 1
+1 2 2 3 2 2, 3 (1) : 1
+2 2 2 1 1 2, 3 (1) : 1
+1 0 3 1 1 1, 1 (1) : 1
+1 3 3 1 1 2, 2 (1) : 1
+2 3 2 2 2 1, 4 (1) : 1
+0 0 0 1 1 2, 2 (1) : 1
+2 2 1 0 0 2, 4 (1) : 1
+2 2 3 0 0 2, 4 (1) : 1
+2 3 1 3 0 3, 2 (1) : 1
+2 3 3 3 0 3, 2 (1) : 1
+1 1 0 0 0 0, 2 (1) : 1
+1 1 1 0 0 0, 1 (1) : 1
+1 1 2 0 0 0, 1 (1) : 1
+2 3 1 0 0 0, 3 (1) : 1
+2 3 3 0 0 0, 3 (1) : 1
+0 0 0 2 2 2, 3 (1) : 1
+0 0 1 3 2 2, 4 (1) : 1
+0 0 3 3 2 2, 4 (1) : 1
+2 2 2 3 2 2, 5 (1) : 1
